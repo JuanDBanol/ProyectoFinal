@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de Inventario</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <section id="loginSection">
+        <div class="login-container">
+            <h2>Iniciar Sesión</h2>
+
+            <form id="loginForm">
+                <input type="email" id="email" placeholder="Correo electrónico">
+                <input type="password" id="password" placeholder="Contraseña">
+                <button type="submit">Ingresar</button>
+            </form>
+
+            <p id="loginError" class="error"></p>
+        </div>
+    </section>
+    <section id="dashboardSection" style="display: none;">
+        <div class="sidebar">
+            <button onclick="showDashboard()">Inicio</button>
+            <button onclick="showProducts()">Productos</button>
+            <button onclick="logout()">Cerrar sesión</button>
+        </div>
+
+        <div class="content">
+
+            <!-- Vista Inicio -->
+            <div id="homeView">
+                <h2>Panel de Control</h2>
+
+                <div class="dashboard-cards">
+                    <div class="stat-card">
+                        <h4>Total Productos</h4>
+                        <p id="totalProducts">0</p>
+                    </div>
+
+                    <div class="stat-card">
+                        <h4>Unidades en Stock</h4>
+                        <p id="totalStock">0</p>
+                    </div>
+
+                    <div class="stat-card">
+                        <h4>Valor Total Inventario</h4>
+                        <p id="totalValue">$0</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vista Productos -->
+            <div id="productsView" style="display:none;">
+                <h2>Gestión de Productos</h2>
+
+                <form id="productForm">
+                    <input type="text" id="productName" placeholder="Nombre">
+                    <input type="number" id="productPrice" placeholder="Precio">
+                    <input type="number" id="productStock" placeholder="Stock">
+                    <button type="submit">Guardar</button>
+                </form>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Precio</th>
+                            <th>Stock</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="productTable"></tbody>
+                </table>
+            </div>
+
+        </div>
+    </section>
+
+<script src="js/app.js"></script>
+</body>
+</html>
